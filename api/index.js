@@ -9,6 +9,7 @@ const openapiHandler = new OpenAPIHandler(router);
 
 app.use('/*', async (c, next) => {
   const { matched, response } = await openapiHandler.handle(c.req.raw, {
+    prefix: '/api',
     context: {}, // Provide initial context if needed
   });
 
